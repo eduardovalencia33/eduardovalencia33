@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería Eléctrica - Conectando el futuro</title>
+    <style>
+        /* Estilos base con un toque humano */
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Encabezado cálido */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1508514177221-188e1eaf2d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Secciones con personalidad */
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1a2a6c;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #b21f1f, #fdbb2d);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        /* Listas con iconos humanos */
+        ul.features {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.features li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.features li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #fdbb2d;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonios reales */
+        .testimonial {
+            background: #f0f7ff;
+            border-left: 4px solid #1a2a6c;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial::before, .testimonial::after {
+            content: '"';
+            font-size: 2rem;
+            color: #b21f1f;
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial::before {
+            top: 0;
+            left: 10px;
+        }
+
+        .testimonial::after {
+            bottom: -15px;
+            right: 10px;
+        }
+
+        .author {
+            text-align: right;
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+
+        /* Tarjetas de especialidades */
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .specialty-card {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+            border-top: 3px solid #b21f1f;
+        }
+
+        .specialty-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 1rem;
+        }
+
+        /* Llamado a la acción humano */
+        .cta {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #1a2a6c, #3a7bd5);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta h2::after {
+            background: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fdbb2d;
+            color: #333;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: #ffcc4d;
+        }
+
+        /* Pie de página */
+        footer {
+            background: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #fdbb2d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ingeniería Eléctrica</h1>
+        <p class="tagline">Donde la ciencia se encuentra con la creatividad para iluminar el mundo</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>¿Qué es la Ingeniería Eléctrica?</h2>
+            <p>La Ingeniería Eléctrica es una de las disciplinas más fascinantes y dinámicas que existen. Nos dedicamos a estudiar, diseñar y aplicar sistemas que generan, transmiten, distribuyen y utilizan la energía eléctrica, el fluido vital de nuestra civilización moderna.</p>
+            
+            <p>Pero más que cables y circuitos, somos los arquitectos de la energía que impulsa hospitales, fábricas, ciudades enteras y hasta los dispositivos que usas para leer esto. Cada vez que enciendes una luz, cargas tu teléfono o usas el transporte público, hay un ingeniero eléctrico detrás.</p>
+            
+            <div class="testimonial">
+                "Elegí esta carrera porque quería entender la magia detrás de cada enchufe. Hoy diseño sistemas que llevan energía a comunidades remotas y la satisfacción es indescriptible."
+                <div class="author">- María González, Ingeniera Eléctrica</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>¿Por qué estudiar Ingeniería Eléctrica?</h2>
+            <ul class="features">
+                <li><strong>Impacto real:</strong> Tu trabajo mejora directamente la calidad de vida de las personas.</li>
+                <li><strong>Diversidad de campos:</strong> Desde energías renovables hasta robótica y telecomunicaciones.</li>
+                <li><strong>Demanda constante:</strong> La energía eléctrica siempre será necesaria y evolucionará con la tecnología.</li>
+                <li><strong>Creatividad técnica:</strong> Resolver problemas complejos con soluciones innovadoras.</li>
+                <li><strong>Trabajo global:</strong> Los principios de la electricidad son universales, permitiendo trabajar en cualquier país.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Especialidades</h2>
+            <p>La ingeniería eléctrica ofrece múltiples caminos según tus intereses:</p>
+            
+            <div class="specialties">
+                <div class="specialty-card">
+                    <h3>Sistemas de Potencia</h3>
+                    <p>Diseño y operación de redes eléctricas, subestaciones y sistemas de distribución a gran escala.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <h3>Electrónica</h3>
+                    <p>Creación de circuitos y dispositivos electrónicos, desde smartphones hasta equipos médicos.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <h3>Control Automático</h3>
+                    <p>Automatización de procesos industriales y desarrollo de sistemas robóticos inteligentes.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <h3>Energías Renovables</h3>
+                    <p>Innovación en sistemas solares, eólicos y otras fuentes de energía sostenible.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <h3>Telecomunicaciones</h3>
+                    <p>Diseño de sistemas de transmisión de datos, fibra óptica y redes inalámbricas.</p>
+                </div>
+                
+                <div class="specialty-card">
+                    <h3>Biomédica</h3>
+                    <p>Desarrollo de equipos médicos y tecnologías para diagnóstico y tratamiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>El día a día de un Ingeniero Eléctrico</h2>
+            <p>Nuestra rutina es todo menos monótona. Un día puedes estar:</p>
+            
+            <ul class="features">
+                <li>Supervisando la construcción de una subestación eléctrica</li>
+                <li>Programando un sistema de control para una fábrica automatizada</li>
+                <li>Analizando datos de consumo energético para optimizar redes</li>
+                <li>Probando prototipos de nuevos dispositivos electrónicos</li>
+                <li>Capacitando a técnicos en normas de seguridad eléctrica</li>
+                <li>Diseñando sistemas solares para comunidades sin acceso a la red</li>
+            </ul>
+            
+            <div class="testimonial">
+                "Lo que más me gusta es que cada proyecto es un nuevo desafío. Ayer estaba programando un sistema de riego automático y hoy diseño iluminación para un estadio."
+                <div class="author">- Carlos Méndez, Ingeniero de Proyectos</div>
+            </div>
+        </section>
+
+        <div class="cta">
+            <h2>¿Listo para encender tu futuro?</h2>
+            <p>Únete a una de las profesiones más versátiles y con mayor impacto en el mundo moderno.</p>
+            <a href="#" class="btn">Quiero más información</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Ingeniería Eléctrica - Facultad de Ingeniería</p>
+        <p>Transformando la energía en progreso desde 1950</p>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+        </div>
+        
+        <p>contacto@ingenieriaelectrica.edu | Tel: +1 234 567 890</p>
+    </footer>
+</body>
+</html>
+
